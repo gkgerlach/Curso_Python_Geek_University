@@ -1,0 +1,13 @@
+##print("Olá, bem vindo ao Curso de Python. /n Qual é o seu nome?")
+##nome = input()
+
+##print("Olá {0}".format(nome))
+##print(f"Olá {nome}, poderia informar sua idade?")
+##idade = input()
+
+##print(f"{nome} de {idade} anos")
+
+nome = input("Olá, bem vindo ao ao Curso de Python. Qual é o seu nome? ")
+print(f"Olá {nome}!")
+idade = int(input("Poderia informar sua idade?"))
+print(f"{nome} de {idade} anos")
