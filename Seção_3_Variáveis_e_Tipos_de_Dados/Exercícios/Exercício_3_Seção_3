@@ -1,0 +1,14 @@
+## 3. Faça um programa que receba três valores e apresente a soma dos quadrados dos valores lidos
+
+n1: float = float(input("Digite o primeiro número: "))
+n2: float = float(input("Digite o segundo número: "))
+n3: float = float(input("Digite o terceiro número: "))
+
+sq: float = float(n1**2 + n2**2 + n3**2)
+
+print(
+    f"A soma dos quadrados dos três números é: {n1**2 + n2**2 + n3**2}"
+)  # Dentro fórmula do print
+print(
+    f"A soma dos quadrados dos três números é: {sq}"
+)  # Usando variável dentro do print

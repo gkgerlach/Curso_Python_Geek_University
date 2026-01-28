@@ -1,0 +1,31 @@
+"""
+# Do ponto de vista de flot
+v = 2.3
+print(v)
+
+# Dupla Atribuição
+v1, v2 = 3, 4
+print(v1, v2)
+
+# Numeros Complexos
+var = 5j
+print(type(var))
+
+print(dir(v))
+
+
+ativo = True
+print(not ativo)
+
+"""
+
+nome = "Gustavo Kovacs Gerlach"
+print(nome.upper())
+print(nome.lower())
+print(nome.split())
+print(nome[0:5])
+print(nome[6:14])
+print(nome.split()[2])
+
+print(nome[::-1])  # Vá do último até o primeiro elemento
+print(nome.replace("G", "L"))
