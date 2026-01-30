@@ -1,0 +1,24 @@
+# Faça um programa que determine e mostre os cinco primeiros multiplos de 3,
+## considerando números maiores que 0
+
+# Com While
+num = 3
+
+while num <= (3 * 5):
+    print(num)
+    num = num + 3
+
+# Com For
+for n in range(3, (3 * 6), 3):
+    print(f"{n}")
+
+
+# Resposta Geek
+contador: int = 0
+indice: int = 1
+
+while contador < 5:
+    if indice % 3 == 0:
+        print(f"O número {indice} é multiplo de 3.")
+        contador = contador + 1
+    indice = indice + 1

@@ -1,0 +1,12 @@
+ativo = True
+logado = True
+
+if ativo is False:
+    print("Usuário ativo no sitema")
+else:
+    print("Você precisa ativar sua conta. Por favor, cheque o seu e-mail")
+
+if not ativo:
+    print("Usuário ativo no sitema")
+else:
+    print("Você precisa ativar sua conta. Por favor, cheque o seu e-mail")

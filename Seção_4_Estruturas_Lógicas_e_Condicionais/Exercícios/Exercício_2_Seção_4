@@ -1,0 +1,10 @@
+## Faça um programa que leia um número inteiro fornecido pelo usuário.
+# Se esse número for positivo, cálcule a raiz quadrda do número e apresente-o.
+# Se for ngativo, mostra uma mensagem dizeno que o número é inválido
+
+n1: int = int(input("Digite um número inteiro: "))
+
+if n1 > 0:
+    print(f"A raiz quadrada é {round(n1 ** (1/2),2)}")
+else:
+    print("Cálculo de raiz quadrada inválido. Número complexo")

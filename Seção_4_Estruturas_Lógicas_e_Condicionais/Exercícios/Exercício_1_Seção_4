@@ -1,0 +1,9 @@
+## Faça um programa que recebea dois números inteiros e mostre qual deles é maior
+
+n1: int = int(input("Digita o número 1: "))
+n2: int = int(input("Digita o número 2: "))
+
+if n1 < n2:
+    print(f"{n1} é menor que {n2}")
+else:
+    print(f"{n1} é maior que {n2}")

@@ -1,0 +1,20 @@
+nome = "Gustavo Kovacs Gerlach"
+lista = [1, 3, 5, 7, 9]
+numeros = range(1, 10)  # Tem que transformar em lista
+
+# Exemplo for 1 (Iterando sobre )
+for letra in nome:
+    print(letra)
+
+
+# Exemplo de for 2 (Iterando sobre uma lista)
+for numero in lista:
+    print(numero)
+
+
+# Exemplo de for 3 (Iterando sobre um range)
+"""range(valor_inicial, valor_final)
+OBS.: O valor final não é inclusive
+"""
+for numero in range(1, 10):
+    print(numero)

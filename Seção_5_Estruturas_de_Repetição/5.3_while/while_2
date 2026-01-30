@@ -1,0 +1,7 @@
+# Exemplo 2
+resposta = ""
+
+while resposta != "sim":
+    resposta = input("Já acabou Jéssica?")
+
+print("Finalmente acabou")
