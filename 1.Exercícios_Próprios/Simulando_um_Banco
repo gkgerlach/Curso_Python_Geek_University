@@ -1,0 +1,47 @@
+## Desafio: Objetivo: Criar um sistema de menus interativo e seguro.
+
+print("--- Banco Python ---")
+print("Bem vindo usuário!")
+
+
+saldo: float = 1500.00
+contador: int = 0
+
+while contador < 3:
+    senha: int = int(input("Digite a sua senha:"))
+
+    if senha == 1234:
+        print("Acesso permitido!")
+        print("== MENU ===")
+        print(f"Saldo atual: {saldo}")
+        print("1. Sacar \n2. Depositar\n3. Sair")
+        n: int = int(input("Escolha:"))
+
+        if n == 1:
+            sacar: float = float(input("Qual o valor que queira sacar? "))
+            if sacar > saldo:
+                print("Saldo insuficiente.")
+            else:
+                print(f"Valor sacado: {sacar}")
+                print(f"Saldo final: {saldo - sacar}")
+            break
+
+        if n == 2:
+            deposito: float = float(input("Qual o valor à depositar? "))
+            print(f"Valor depositado: {deposito}")
+            print(f"Saldo final: {saldo + deposito}")
+            break
+
+        if n == 3:
+            print("Saindo do sistema.")
+            exit()
+
+        else:
+            print("Escolha uma das 3 opções")
+
+    if senha != 1234:
+        contador = contador + 1
+        print(f"Senha incorreta. Tentativa {contador}/3")
+        if contador == 3:
+            print("Acesso negado.")
+            break

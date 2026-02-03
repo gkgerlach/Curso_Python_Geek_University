@@ -1,0 +1,19 @@
+## O Aprovador de Empréstimo (Lógica de Negócios)
+
+print(
+    "Olá, bem vindo ao Banco CT.\nVocê está na área de emprestimos. Por gentileza informe:"
+)
+casa: float = float(input("Informe o valor da casa: "))
+salario: float = float(input("Informe sua renda mensal: "))
+anos: int = int(input("Quanto anos pretende pagar o imprestimo: "))
+
+pm: float = float(casa / (anos * 12))  # Cálculo da prestação
+limite: float = float(salario * 0.3)
+
+print(f"O valor da prestação: R${pm:.2f}")
+print(f"Limite permitido (30% do salário): R${limite:.2f}")
+
+if pm > 0.3 * salario:
+    print("Empréstimo NEGADO")
+else:
+    print("Empréstimo APROVADO")
