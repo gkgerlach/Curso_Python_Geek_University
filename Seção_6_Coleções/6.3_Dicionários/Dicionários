@@ -1,0 +1,40 @@
+"""
+#Forma 1 (mais comum)
+paises = {"br": "Brasil", "eua": "Estados Unidos", "py": "Paraguai"}
+print(paises)
+print(type(paises))
+
+#Forma 2 (menos comum)
+paises1 = dict(br="Brasil", eua="Estados Unidos", py="Paraguai")
+print(paises1)
+print(type(paises1))
+
+paises = {"br": "Brasil", "eua": "Estados Unidos", "py": "Paraguai"}
+
+# Forma 1 - Acessando via chave, da mesma forma que lista/tupla
+print(paises["br"])
+print(paises["py"])
+
+# Forma 2 - Acessando via get - Recomendado
+print(paises.get("br"))
+print(paises.get("py"))
+print(paises.get("ru"))
+
+paises = {"br": "Brasil", "eua": "Estados Unidos", "py": "Paraguai"}
+russia = paises.get("ru")
+
+if russia:
+    print(f"Encontrei a Russia")
+else:
+    print("Não encontrei o país")
+
+pais = paises.get("py")
+
+if pais:
+    print(f"Encontrei a país {pais}")
+else:
+    print("Não encontrei o país")
+"""
+
+paises = {"br": "Brasil", "eua": "Estados Unidos", "py": "Paraguai"}
+russia = paises.get("ru")
