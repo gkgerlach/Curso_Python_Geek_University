@@ -1,0 +1,160 @@
+"""
+# Definindo um conjunto
+
+# Forma 1
+s = set({1, 2, 3, 4, 5, 6, 7, 2, 3})  # Repare que temos valores repetidos
+
+print(s)
+print(type(s))
+
+# Forma 2
+s = {1, 2, 3, 4, 5, 5}
+print(s)
+print(type(s))
+
+# Podemos verficar se determinado elemento está contido no conjunto
+if 3 in s:
+    print("Tem o 3")
+else:
+    print("Não tem o 3")
+
+
+# Importante lembrar que além de não termos valores duplicados, não temos ordem
+
+
+lista = [99, 2, 24, 23,2, 12, 1, 44, 5, 24]  
+print(f'Lista: {lista} com {len(lista)} elementos')
+
+tupla = (99, 2, 24, 23,2, 12, 1, 44, 5, 24)
+print(f'Tupla: {tupla} com {len(tupla)} elementos')
+
+dicionario = {}.fromkeys([99, 2, 24, 23,2, 12, 1, 44, 5, 24], 'dict')
+print(f'Dicionário: {dicionario} com {len(dicionario)} elementos')
+
+conjunto = {99, 2, 24, 23,2, 12, 1, 44, 5, 24}
+print(f'Conjunto: {conjunto} com {len(conjunto)} elementos')
+
+
+#Assim como todo outro conjunto Python podemos colocar tipos de dados misturados em Sets
+
+s = {1, 'b', True, 34.22, 44}
+print(s)
+print(type(s))
+
+for valor in s:
+    print(valor)
+
+
+#Usos interessantes com Sets
+
+#Listas
+cidades = ['Belo Horizonte', 'São Paulo', 'Campo Grande', 'Cuiaba', 'Campo Grande', 'São Paulo', 'Cuiaba']
+print(cidades)
+print(len(cidades))
+
+#Agora precisamos saber quantas cidades distintas (únicas)
+#O que você faria? Faria um Loop na lista?
+#Podemos utilizar o set para isso:
+
+print(set(cidades))
+print(len(set(cidades)))
+
+#Adicionando elementos em um conjunto
+s={1,2,3}
+
+s.add(4)
+print(s)
+
+#Removendo elementos em um conjunto
+#Forma 1
+s={1,2,3}
+print(s)
+
+s.remove(3) #Não é indice! Informamos o valor a ser removido
+
+print(s)
+
+#Forma 2
+s.discard(2)
+print(s)
+
+# Copiando em conjunto para outro
+
+s={1,2,3}
+print(s)
+
+# Forma 1 - Deep Copy
+novo = s.copy()
+print(novo)
+
+novo.add(4)
+
+print(novo)
+print(s)
+
+# Forma 2 - Shallow Copy
+novo = s
+print(novo)
+
+novo.add(4)
+print(novo)
+print(s)
+
+# Podemos remover todos os itens de um conjunto
+
+s={1,2,3}
+print(s)
+
+s.clear()
+print(s)
+
+#Podemos remover todos os itens de um conjunto
+estudants_python = {'Marcos', 'Patricia', 'Ellen', 'Pedro', 'Julia', 'Guilherme'}
+estudantes_java = {'Fernando', 'Gustavo', 'Julia', 'Ana', 'Patricia'}
+
+# Veja que alguns alunos estudam Python também estudam Java.
+# Precisamos Gerar um conjunto com nomes de estudantes únicos
+
+# Forma 1 - Utilizando Union
+unicos1 = estudants_python.union(estudantes_java)
+# Ou unicos1 = estudants_java.union(estudantes_python)
+print(unicos1)
+
+# Forma 2 - Utilizando o caractere pipe “ | ”
+unicos2 = estudantes_java | estudants_python
+print(unicos2)
+
+
+#Podemos remover todos os itens de um conjunto
+estudants_python = {'Marcos', 'Patricia', 'Ellen', 'Pedro', 'Julia', 'Guilherme'}
+estudantes_java = {'Fernando', 'Gustavo', 'Julia', 'Ana', 'Patricia'}
+
+#Forma 1 - Utilizando o intersection
+ambos1 = estudants_python.intersection(estudantes_java)
+print(ambos1)
+
+#Forma 2 - Utilizando o "&"
+ambos2 = estudants_python & estudantes_java
+print(ambos2)
+
+
+#Podemos remover todos os itens de um conjunto
+estudants_python = {'Marcos', 'Patricia', 'Ellen', 'Pedro', 'Julia', 'Guilherme'}
+estudantes_java = {'Fernando', 'Gustavo', 'Julia', 'Ana', 'Patricia'}
+
+# Gerar um conjunto que não estão no outro
+so_python = estudants_python.difference(estudantes_java)
+print(so_python)
+
+so_java = estudantes_java.difference(estudants_python)
+print(so_java)
+ """
+
+#Soma*, Valor Máximo*, Valor Mínimo*, Tamanho
+s={1,2,3,4,5,6}
+
+print(sum(s))
+print(max(s))
+print(min(s))
+print(len(s))
+
