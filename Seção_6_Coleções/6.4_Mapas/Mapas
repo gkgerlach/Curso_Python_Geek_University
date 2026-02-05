@@ -1,0 +1,50 @@
+"""
+
+# Iterar sobre dicionários
+
+receita = {"jan": 100, "fev": 120, "mar": 300}
+for chave in receita:
+    print(chave)
+
+for chave in receita:
+    print(receita[chave])
+
+for chave in receita:
+    print(f"Em {chave} recebi R$ {receita[chave]}")
+
+
+# Iterar sobre dicionários nas Chaves
+
+receita = {"jan": 100, "fev": 120, "mar": 300}
+print(receita)
+print(receita.keys())
+
+for chave in receita.keys(): #Modo Pythonico
+    print(receita[chave])
+
+# Acessando os valores
+receita = {"jan": 100, "fev": 120, "mar": 300}
+print(receita)
+print(receita.values())
+
+for valor in receita.values(): #Modo Pythonico
+    print(valor)
+
+# Desempacotamento de dicionários
+receita = {"jan": 100, "fev": 120, "mar": 300}
+print(receita)
+
+print(receita.items()) #Geração de Tuplas na Lista
+for chave, valor in receita.items():
+    print(f"chaves = {chave} e valor = {valor}")
+"""
+
+# Soma*, Máximo*, Mínimo* e Tamanho
+
+receita = {"jan": 100, "fev": 120, "mar": 300}
+print(receita)
+
+print(sum(receita.values()))
+print(max(receita.values()))
+print(min(receita.values()))
+print(len(receita))
