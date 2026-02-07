@@ -1,0 +1,44 @@
+"""
+Docstring for Seção_6_Coleções.6.6_Módulo_Collections.6.6
+6.6.1 - Counter
+
+#Utilizando o Counter
+from collections import Counter
+
+#Exemplo 1
+#Poderia ser qualquer iterável -> Tupla por exemplo
+lista = [1,1,1,2,2,3,3,3,4,4,4,5,5,5,5,3,43,5353,2,52,135,4234,12,1] 
+
+res = Counter(lista)
+print(type(res))
+print(res)
+
+#**Veja que para cada elemento da lista, o Counter criou uma chave 
+# e colocou como valor a quantidade de ocorrências
+
+
+#Exemplo 2
+from collections import Counter
+
+print(Counter('Geek University'))
+
+
+"""
+
+#Utilizando o Counter
+from collections import Counter 
+
+#Exemplo 3
+texto = """Python é uma linguagem de programação de alto nível, 
+de código aberto e amplamente utilizada, conhecida por sua sintaxe 
+simples e clara, que se assemelha ao inglês. Criada por Guido van 
+Rossum em 1991, é ideal para iniciantes e profissionais, sendo muito 
+versátil em desenvolvimento web, ciência de dados, inteligência 
+artificial e automação. """
+
+palavras = texto.split()
+#print(palavras)
+res = Counter(palavras)
+print(res)
+
+print(res.most_common(5)) #Palavras com mais ocorrência

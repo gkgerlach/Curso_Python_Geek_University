@@ -1,0 +1,35 @@
+"""
+
+2. Faça im programa que uma lista denominada A que amarzene
+6 números inteiros. O programa deve executar os seguintes passos:
+
+a)Atribua os seguintes valores a essa lista: 1, 0, 5, -2, -5, 7.
+b)Armazene em uma variável inteira a soma entre os valores das posições
+A[0], A[1] e A[5] da lista e mostra na tela esta soma
+c)Modifique a lista na posição 5, atribuindo a esta posição o valor 100.
+d)Mostre na tela cada valor na lista A, um em cada linha
+"""
+
+A = [1, 0, 5, -2, -5, 7]
+print(f'Exercício a) {A}')
+
+somaA = int(A[0]+ A[1]+ A[5])
+print(f'Exercício b) As somas das posições 0, 1 e 5: {somaA}')
+
+"""""
+A.pop(5)
+A.insert(5, 100)
+print(f'Exercício c) {A}')
+"""
+A[5]=100
+print(f'Exercício c) {A}')
+
+print('Exercício d)')
+"""
+contagem = 1
+for i in A:
+    print(f'Linha {contagem} - {i}')
+    contagem = contagem + 1
+"""
+for indice, valor in enumerate(A, start=1):
+    print(f'Linha {indice} - {valor}')

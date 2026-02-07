@@ -1,0 +1,19 @@
+""""
+6.6.2 - Default Dict
+
+#Recacp
+dicionario = {'curso':'Programação em Python'}
+print(dicionario)
+print(dicionario['curso'])
+
+"""
+
+from collections import defaultdict
+
+dicionario = defaultdict(lambda:0)
+
+dicionario['curso'] = 'Programação em Python'
+print(dicionario)
+
+print(dicionario['outro']) #KeyErro se dicionário comum
+print(dicionario)
