@@ -1,0 +1,46 @@
+"""
+Definindo_Funções
+#Exemplo de utilização de funções
+cores = ['verde', 'amarelo', 'azul', 'branco'] #lista
+
+#Utilizando a função integrada (Built - in) do Python print()
+print(cores)
+
+curso = 'Programação em Python' #string
+print(curso)
+
+cores.append('roxo')
+print(cores)
+
+curso.append('mais dados...') #AttributeError
+print(curso)
+
+
+cores.clear() #Sem dados de entrada
+print(cores)
+
+
+cores = ['verde', 'amarelo', 'azul', 'branco'] #lista
+curso = 'Programação em Python' #string
+
+
+#Definindo a primeira função
+def diz_oi():
+    print('oi')
+
+#Utilizando funções
+#Chamada de execução
+diz_oi()
+
+"""
+
+
+#Exemplo 2
+def cantar_parabens():
+    print('Parabens para você')
+    print('Nesta data querida')
+    print('Muitos anos de vida')
+
+canta = cantar_parabens
+
+canta()

@@ -1,0 +1,87 @@
+"""
+Funções_Com_Retorno
+numeros = [1,2,3]
+
+ret_pop = numeros.pop()
+
+print(f'Retorno de pop {ret_pop}')
+
+ret_pr = print(numeros)
+print(f'Retorno de print: {ret_pr}')
+
+
+#Vamos refatorar esta função para que ela retorne o valor
+
+def quadrado_de_7():
+    return 7*7
+
+# Criamos uma variação para receber o retorno da função
+ret = quadrado_de_7()
+
+print(f'Retorno {ret}')
+print(f'Retorno {quadrado_de_7()}')
+
+#Refatorando a primeira função
+def diz_oi():
+    return 'oi'
+
+print(diz_oi())
+
+#Exemplo 1
+def diz_oi():
+    print('Estou sendo executado antes o retorno....')
+    return 'Oi!'
+    print('Estou sendo executado após o retorno....')
+
+print(diz_oi())
+
+
+#Exemplo 2
+def nova_funcao():
+    variavel = False
+    if variavel:
+        return 4
+    elif variavel is None:
+        return 3.2
+    return 'b'
+
+print(nova_funcao())
+
+#Exemplo 3
+def outra_funcao():
+    return 2,3,4,5
+
+print(outra_funcao())
+
+# Vamos criar um função para jogar a moeda
+from random import random
+
+def joga_moeda():
+    #Gera um número pseudo-randômico entre 0 e 1
+    valor = random()
+    if valor > 0.5:
+        return 'Cara'
+    return 'Coroa'
+
+print(joga_moeda())
+
+# Vamos criar um função para jogar a moeda
+from random import random
+
+def joga_moeda():
+    #Gera um número pseudo-randômico entre 0 e 1
+    if random() > 0.5:
+        return 'Cara'
+    return 'Coroa'
+
+print(joga_moeda())
+"""
+
+def e_impar():
+    numero = 5
+    if numero % 2 != 0:
+        return True
+    ##else:
+        ##return False
+    return False
+print(e_impar())
