@@ -1,0 +1,86 @@
+"""
+Entendendo o 'args'
+
+def soma_todos_numeros(num1, num2, num3):
+    return num1 + num2 + num3
+
+
+print(soma_todos_numeros(4, 6, 9))
+
+# print(soma_todos_numeros(4,6)) #TypeError por não computador 3 valores que foram definidos
+# print(soma_todos_numeros(4,6,9,5)) #TypeError por não computador 3 valores que foram definidos
+
+def soma_todos_numeros(*args):
+    print(args)
+
+
+(soma_todos_numeros())
+(soma_todos_numeros(1))
+(soma_todos_numeros(1, 2))
+(soma_todos_numeros(1, 2, 3))
+(soma_todos_numeros(1, 2, 3, 4))
+(soma_todos_numeros(1, 2, 3, 4, 5))
+
+def soma_todos_numeros(*args):
+    total = 0
+    for numero in args:
+        total = total + numero
+    return total
+
+
+print(soma_todos_numeros())
+print(soma_todos_numeros(1))
+print(soma_todos_numeros(1, 2))
+print(soma_todos_numeros(1, 2, 3))
+print(soma_todos_numeros(1, 2, 3, 4))
+print(soma_todos_numeros(1, 2, 3, 4, 5))
+
+# Melhorando o código
+def soma_todos_numeros(*args):
+    return sum(args)
+
+
+print(soma_todos_numeros())
+print(soma_todos_numeros(1))
+print(soma_todos_numeros(1, 2))
+print(soma_todos_numeros(1, 2, 3))
+print(soma_todos_numeros(1, 2, 3, 4))
+print(soma_todos_numeros(1, 2, 3, 4, 5))
+
+
+# Outro Exemplo
+def soma_todos_numeros(nome, email, *args):
+    return nome, email, sum(args)
+
+
+print(soma_todos_numeros("Caio", "caio@gmail.com"))
+print(soma_todos_numeros("Caio", "caio@gmail.com", 1))
+print(soma_todos_numeros("Caio", "caio@gmail.com", 1, 2))
+print(soma_todos_numeros("Caio", "caio@gmail.com", 1, 2, 3))
+print(soma_todos_numeros("Caio", "caio@gmail.com", 1, 2, 3, 4))
+print(soma_todos_numeros("Caio", "caio@gmail.com", 1, 2, 3, 4, 5))
+
+# Exemplo *args
+def verifica_info(*args):
+    if "Geek" in args and "University" in args:
+        return "Bem vindo Geek!"
+    return "Não sei quem é você."
+
+
+print(verifica_info())
+print(verifica_info(1, True, "University", "Geek"))
+print(verifica_info(1, "University", 3.1415))
+"""
+
+
+def soma_todos_numeros(*args):
+    return sum(args)
+
+
+# print(soma_todos_numeros())
+# print(soma_todos_numeros(1, 2, 3, 4, 5))
+
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# Desempacotador
+
+print(soma_todos_numeros(*numeros))

@@ -1,0 +1,33 @@
+"""
+Funções com Docstring
+print(help(print()))
+
+Podemos ter acesso a documentação de uma função em Python utilizando a propriedade especial __doc__
+
+"""
+
+
+def diz_oi():
+    """Uma função simples que retorna a string 'Oi!'"""
+    return "Oi!"
+
+
+print(diz_oi())
+
+print(help(diz_oi()))
+print(diz_oi(), __doc__)
+help(diz_oi())
+
+
+def exp(num, pot=2):
+    """
+    Docstring for exp
+
+    :param num: Description
+    :param pot: Description
+    """
+    # Geração automática dos parâmetros
+    return num**pot
+
+
+print(exp(5))

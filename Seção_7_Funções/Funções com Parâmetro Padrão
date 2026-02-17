@@ -1,0 +1,142 @@
+"""
+Funções com Parâmetro Padrão
+
+
+
+def quadrado(numero):
+    return numero**2
+
+print(quadrado(3))
+print(quadrado())
+
+Exemplo de Parâmetro Padrão
+
+def exponencial(numero, potencia=2): #Colando um valor padrão parao parâmetro, no caso 2
+    return numero**potencia
+
+
+print(exponencial(2, 3))  # 2*2*2=8
+print(exponencial(3, 2))  # 3*3
+
+print(exponencial(3))  # Por padrão eleve ao quadrado -> Objetivo
+print(exponencial(3, 5))  # Eleva a potência informada pelo usuário
+
+#Errado
+def exp(num=2, pot):
+    return num ** pot
+print(exp(6))
+
+#Certo
+def exp(pot, num=2):
+    return num ** pot
+print(exp(6))
+
+# Exemplo mais complexo
+def mostra_informacao(nome="Geek", instrutor=False):
+    if nome == "Geek" and instrutor:
+        return "Bem Vindo instrutor Geek!"
+    elif nome == "Geek":
+        return "Eu pensei que você era o instrutor"
+    return f"Olá {nome}"
+
+
+print(mostra_informacao())
+print(mostra_informacao(instrutor=True))
+print(mostra_informacao(True))
+print(mostra_informacao("Ozzy"))
+print(mostra_informacao(nome="Caio"))
+
+#Quais os tipos de dados utilizar como valor default para parâmetros
+
+1. Números
+2. Stringa
+3. Booleanos
+4. Listas
+5. Tuplas
+6. Dicionários
+7. Funções
+8. Etc
+
+
+# Exemplo
+def soma(num1, num2):
+    return num1 + num2
+
+
+def mat(num1, num2, fun=soma):
+    return fun(num1, num2)
+
+
+def subtracao(num1, num2):
+    return num1 - num2
+
+
+print(mat(2, 3))
+print(mat(2, 3, subtracao))
+
+# Escopo
+instrutor = "Geek"  # Variável Global
+
+#Com Variável Globlal -> Output com 'Geek'
+def diz_oi():
+    return f"Oi {instrutor}"
+
+print(diz_oi())
+
+#Com Variável Local -> Output com 'Python'
+def diz_oi():
+    instrutor = "Python" #Variável Local
+    return f"Oi {instrutor}"
+
+print(diz_oi())
+
+def diz_oi():
+    prof = 'Geek' #Variável Local
+    return f'Olá {prof}'
+
+print(diz_oi())
+
+print(prof) #Name Error
+
+#Exemplo de Atenção
+total = 0
+
+def incremento():
+    total = total + 1
+    return total
+
+print(incremento())
+
+
+#Para forma de correção
+total = 0
+
+
+def incremento():
+    global total #Avisando o Python que estamos utilizando a variável global
+    total = total + 1
+    return total
+
+
+print(incremento())
+"""
+
+
+# Exemplo de função dentro de função
+def fora():
+    contador = 0
+
+    def dentro():
+        nonlocal contador
+        contador = contador + 1
+        return contador
+
+    return dentro()
+
+
+print(fora())
+print(fora())
+print(fora())
+
+# O que não pode fazer
+# print(dentro()) -> Não reconhecido
