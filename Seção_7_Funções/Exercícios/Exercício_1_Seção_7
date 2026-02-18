@@ -1,0 +1,30 @@
+"""
+Docstring for Seção_7_Funções.Exercícios.Exercício_1_Seção_7
+
+
+1. Crie um programa que tenha uma função que recebe um parâmetro inteiro
+e devolve o seu dobro
+
+"""
+
+"""
+def num_dobro(num: int):
+    return 2*num
+
+print(num_dobro(2))
+print(num_dobro(3))
+print(num_dobro(4))
+"""
+
+def dobro_numero(num: int):
+    return 2*num
+
+try:
+    valor: int = int(input('Digite um número inteiro:'))
+    resultado = dobro_numero(valor)
+    print(f'O dobro de {valor} é {resultado}')
+
+except:
+    print('Erro: Precisa ser número inteiro')
+
+

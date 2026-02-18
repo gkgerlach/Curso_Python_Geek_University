@@ -1,0 +1,53 @@
+"""
+Docstring for Seção_7_Funções.Exercícios.Exercício_2_Seção_7
+
+2. Faça um programa que tenha uma função que recebe uma data no formato 
+string exemplo “01/01/2024” e imprima ela por extenso 
+como “1 de janeiro de 2024”.
+"""
+
+
+"""
+def data_por_extenso(data: str) -> None:
+    d = data.split('/')
+
+    dia: int=int(d[0])
+    mes: int=int(d[1])
+    ano: int=int(d[2])
+
+    if mes == 1:
+        mes_str = 'janeiro'
+    elif mes == 2:
+        mes_str = 'fevereiro'
+    elif mes == 3:
+        mes_str = 'março'
+    elif mes == 4:
+        mes_str = 'abril'
+
+    print(f'{dia} de {mes_str} de {ano}')
+
+if __name__ == '__main__':
+    data_por_extenso('01/01/2024')
+
+"""
+
+
+def data_por_extenso(data: str) -> None:
+    d = data.split('/')
+    dia, mes, ano = int(d[0]), int(d[1]), int(d[2])
+
+    meses = {
+        1: 'janeiro', 2: 'fevereiro', 3: 'março', 4: 'abril',
+        5: 'maio', 6: 'junho', 7: 'julho', 8: 'agosto',
+        9: 'setembro', 10: 'outubro', 11: 'novembro', 12: 'dezembro'
+    }
+
+
+    if mes in meses:
+        mes_str = meses[mes]
+        print(f'{dia} de {mes_str} de {ano}')
+    else:
+        print(f'Erro: O número {mes} é inexistente.')
+
+if __name__ == '__main__':
+    data_por_extenso('01/12/2024')

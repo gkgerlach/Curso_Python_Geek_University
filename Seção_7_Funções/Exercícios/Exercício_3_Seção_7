@@ -1,0 +1,25 @@
+"""
+Docstring for Seção_7_Funções.Exercícios.Exercício_3_Seção_7
+
+
+3. Faça um programa que tenha uma função 
+que receba uma lista de inteiros e retorne o maior valor.
+
+"""
+
+def maior_numero(*args):
+    return max(args)
+
+lista = [4,5,49,432,42,2]
+
+print(maior_numero(*lista))
+
+
+#Outro jeito
+def maior_numero(numeros: list[int]) -> int:
+    return max(numeros)
+
+
+if __name__ == '__main__':
+    lista: list[int] = [4,5,49,432,42,2]
+    print(f'Maior número é {maior_numero(lista)} da lista {lista}')
