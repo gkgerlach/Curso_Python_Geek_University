@@ -1,0 +1,44 @@
+"""
+Docstring for 1.Exercícios_Próprios.Cálculo_IMC_com_Biblioteca
+
+2. Construa um programa no qual o usuário informe o nome, a
+estatura e o peso de vários alunos de uma turma. Após o cadastro, o programa deve imprimir o nome e o IMC de cada aluno
+ordenados pelo nome do aluno.
+"""
+
+from operator import itemgetter
+
+turma = []
+
+while True:
+    print("Para finalizar o programa, informe 'fim' ou 'sair' no nome.")
+    nome: str = str(input("Informe o nome: "))
+    if nome.strip().lower() in ["fim", "sair"]:
+        print(100 * "-")
+        print("Lista dos Alunos \n")
+        break
+    peso: float = float(input("Informe o peso: "))
+    altura: float = float(input("Informe a altura: "))
+    imc = round((peso / (altura**2)), 2)
+    aluno = {"Nome": nome, "IMC": imc}
+    turma.append(aluno)
+
+turma.sort(key=itemgetter("Nome"))
+
+print("\n")
+"""
+for n in enumerate(turma, start=1):
+    print(n)
+"""
+for i, aluno in enumerate(turma, start=1):
+    # Acessamos as chaves do dicionário de forma direta
+    print(f"{i}. Aluno: {aluno['Nome']} | IMC: {aluno['IMC']}")
+
+print("\n")
+print(100 * "-")
+print("Abaixo do peso: IMC < 18,5 kg/m²")
+print("Peso Normal (Ideal): IMC 18,5 a 24,9 kg/m²")
+print("Sobrepeso: IMC 25,0 a 29,9 kg/m²")
+print("Obesidade Grau I: IMC 30,0 a 34,9 kg/m²")
+print("Obesidade Grau II: IMC 35,0 a 39,9 kg/m²")
+print("Obesidade Grau III (Mórbida): IMC >= 40,0 kg/m²")

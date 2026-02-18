@@ -1,0 +1,99 @@
+"""
+Docstring for 1.Exercícios_Próprios.O Conversor de Unidades
+O Desafio: Crie uma função chamada converter_temperatura que recebe um valor em Celsius 
+e um parâmetro chamado para (que pode ser "K" para Kelvin ou "F" para Fahrenheit).
+
+Meu código:
+temp: float=float(input('Qual temperatura deseja converter: ')) 
+teste: str=str(input('Deseja converter para Fahrenheit? Sim/Não : ')) # Evitar variáveis globais
+
+def converter_temperatura(conv: float):
+    if teste.lower() == 'sim':
+        return (conv*(9/5))+32
+    else:
+        return conv+273.15
+
+    
+print(converter_temperatura(temp))
+
+
+
+Código Gemini Completo:
+def converter_temperatura(celsius: float, escala: str='K') ->float:
+    if escala.upper() == 'F': 
+    #Cálculo para Fahrenheit
+        return celsius*(9/5)+32
+    
+    return celsius+273.15
+
+if __name__ == '__main__':
+    print('Conversão de temperatura')
+
+    try:
+        valor_c = float(input('Digite a temperatura em Celsius: '))
+
+        print('Qual escala que deseja converter: ')
+        print('[K] Kelvin (Padrão)')
+        print('[F] Fahrenheint')
+        destino = input('Sua escolha:' ).strip()
+
+        if destino == '':
+            resultado = converter_temperatura(valor_c)
+            unidade = 'Kelvin'
+        else:
+            resultado = converter_temperatura(valor_c, destino)
+            unidade = 'Fahrenheint' if destino.upper() == 'F' else 'Kelvin'
+        
+        print(f'\n{valor_c}°C equivale a {resultado:.2f} {unidade}')
+
+    except ValueError:
+        print('Erro')
+
+"""
+"""
+def converter_escala(celsius, escala='K'):
+
+    if escala.upper() == 'F':
+        resultado = celsius*(9/5)+32
+        return resultado
+    
+    resultado = celsius+273.15
+    return resultado
+
+valor_c = float(input('Informe a temperatura em Celsius: '))
+unidade = str(input('Converter para [K] ou [F]: ')).strip()
+
+valor_convertido = converter_escala(valor_c, unidade)
+
+print(f'O Resultado da conversão é: {valor_convertido}')
+"""
+
+def converter_temperatura(celsius: float, escala: str='K') ->float:
+    if escala.upper() == 'F': 
+    #Cálculo para Fahrenheit
+        return celsius*(9/5)+32
+    
+    return celsius+273.15
+
+if __name__ == '__main__':
+    print('Conversão de temperatura')
+
+    try:
+        valor_c = float(input('Digite a temperatura em Celsius: '))
+
+        print('Qual escala que deseja converter: ')
+        print('[K] Kelvin (Padrão)')
+        print('[F] Fahrenheint')
+        destino = input('Sua escolha:' ).strip()
+
+        if destino == '':
+            resultado = converter_temperatura(valor_c)
+            unidade = 'Kelvin'
+        else:
+            resultado = converter_temperatura(valor_c, destino)
+            unidade = 'Fahrenheint' if destino.upper() == 'F' else 'Kelvin'
+        
+        print(f'\n{valor_c}°C equivale a {resultado:.2f} {unidade}')
+
+    except ValueError:
+        print('Erro')

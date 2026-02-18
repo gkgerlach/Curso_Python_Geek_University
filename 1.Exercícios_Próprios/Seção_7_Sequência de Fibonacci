@@ -1,0 +1,60 @@
+"""
+Docstring for 1.Exercícios_Próprios.Sequência de Fibonacci
+
+def gerar_fibonacci(n: int) -> list:
+    "Gera uma sequência de Fibonacci"
+
+    sequencia = [0,1]
+
+    if n <=0:
+        return []
+    elif n == 1:
+        return [0]
+    elif n == 2:
+        return sequencia
+    
+    for i in range(2, n):
+        next = sequencia[-1]+sequencia[-2]
+        sequencia.append(next)
+
+    return sequencia
+
+if __name__=='__main__':
+    try:
+        qtd = int(input('Quantos números na sequência: '))
+        resultado = gerar_fibonacci(qtd)
+        print(f'Sequência resultado: {resultado}')
+    except ValueError:
+        print('Erro')
+"""
+
+
+def gerar_fibonacci(n: int) -> list:
+    "Gera uma sequência de Fibonacci"
+
+    sequencia = [0,1]
+
+    if n <=0:
+        return []
+    elif n == 1:
+        return [0]
+    elif n == 2:
+        return sequencia
+    
+    for i in range(2, n):
+        next = sequencia[-1]+sequencia[-2]
+        sequencia.append(next)
+
+    return sequencia
+
+if __name__=='__main__':
+    try:
+        ##Usando laço de repetição para gerar linhas de cada sequência
+        qtd = int(input('Quantos números na sequência: '))
+        resultado = gerar_fibonacci(qtd+2)
+        for i in range(qtd):   
+            print(f'{i+1} -> {resultado[i+2]}') ##Nesse caso imprime o valor respectivo pois
+            #resultado[n] é referente ao valor dentro dessa lista gerada
+
+    except ValueError:
+        print('Erro')

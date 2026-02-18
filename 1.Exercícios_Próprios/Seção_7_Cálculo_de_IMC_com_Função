@@ -1,0 +1,45 @@
+"""
+Docstring for 1.Exercícios_Próprios.Seção_7_Cálculo_de_IMC_com_Função
+"""
+
+from operator import itemgetter
+
+def imc(peso,altura):
+    return round(peso/altura**2,2)
+
+def categoria_imc(valor):
+    if valor < 18.5: return "Abaixo do peso"
+    elif valor < 25: return "Peso Normal"
+    elif valor < 30: return "Sobrepeso"
+    else: return "Obesidade"
+
+grupo = []
+while True:
+    print("Para finalizar o programa informe 'fim' ou 'sair' no nome.")
+    nome: str = str(input('Infome o nome: '))
+    if nome.strip().lower() in ['fim', 'sair']:
+        print(100*'-')
+        print('Lista de Pessoas \n')
+        break
+    peso: float=float(input("Informe o peso: "))
+    altura: float=float(input('Informe a altura: '))
+    resultado = imc(peso,altura)
+    categoria = categoria_imc(resultado)
+    pessoa = {'Nome':nome,'Peso':peso,'Altura':altura,'IMC':resultado, 'Categoria':categoria}
+    grupo.append(pessoa)
+
+grupo.sort(key=itemgetter('Nome'))
+
+print('\n')
+
+for i, pessoa in enumerate(grupo, start=1):
+    print(f"Pessoa {i} - Nome: {pessoa['Nome']} | Peso: {pessoa['Peso']} | Altura: {pessoa['Altura']} | IMC:{pessoa['IMC']} | Categoria: {pessoa['Categoria']}")
+
+print("\n")
+print(100 * "-")
+print("Abaixo do peso: IMC < 18,5 kg/m²")
+print("Peso Normal (Ideal): IMC 18,5 a 24,9 kg/m²")
+print("Sobrepeso: IMC 25,0 a 29,9 kg/m²")
+print("Obesidade Grau I: IMC 30,0 a 34,9 kg/m²")
+print("Obesidade Grau II: IMC 35,0 a 39,9 kg/m²")
+print("Obesidade Grau III (Mórbida): IMC >= 40,0 kg/m²") 

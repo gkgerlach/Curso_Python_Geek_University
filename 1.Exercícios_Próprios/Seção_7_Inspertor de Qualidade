@@ -1,0 +1,62 @@
+"""
+Docstring for 1.Exercícios_Próprios.Inspertor de Qualidade
+
+Nível 2: O Inspetor de Qualidade (Listas)
+O Problema: Você tem uma lista de medidas de pressão de um lote de produção.
+O Desafio: Crie uma função que recebe uma lista de números e retorna um Dicionário contendo:
+
+A média das pressões.
+
+O maior valor encontrado.
+
+O menor valor encontrado.
+
+Dica: Tente usar funções internas do Python como sum(), len(), max() e min() dentro da sua função.
+
+def analisar_lote(pressoes: list) -> dict:
+    media = round((sum(pressoes)/len(pressoes)),2)
+    maior = max(pressoes)
+    menor = min(pressoes)
+
+    return {'Pressão Média':media,'Máxima Pressão':maior,'Mínima Pressão':menor }
+
+if __name__=='__main__':
+    minhas_pressoes = []
+    
+    print("Entrada de Dados do Lote (digite 'sair' para finalizar)")
+    while True:
+        entrada = input("Digite o valor da pressão verificada (ou 'sair'): ")
+        if entrada.lower() == 'sair':
+            break
+        valor_numerico = float(entrada)
+        minhas_pressoes.append(valor_numerico)  
+    if len(minhas_pressoes) > 0:
+        relatorio = analisar_lote(minhas_pressoes)
+        print(relatorio)
+    else: 
+        print("Nenhum dado inserido")
+"""
+
+def analisar_lote(pressoes: list) -> dict:
+    media = round((sum(pressoes)/len(pressoes)),2)
+    maior = max(pressoes)
+    menor = min(pressoes)
+
+    return {'Pressão Média':media,'Máxima Pressão':maior,'Mínima Pressão':menor }
+
+if __name__=='__main__':
+    minhas_pressoes = []
+    
+    print("Entrada de Dados do Lote (digite 'sair' para finalizar)")
+    while True:
+        entrada = input("Digite o valor da pressão verificada (ou 'sair'): ")
+        if entrada.lower() == 'sair':
+            break
+        valor_numerico = float(entrada)
+        minhas_pressoes.append(valor_numerico)  
+    
+    if len(minhas_pressoes) > 0:
+        relatorio = analisar_lote(minhas_pressoes)
+        print(relatorio)
+    else: 
+        print("Nenhum dado inserido")
