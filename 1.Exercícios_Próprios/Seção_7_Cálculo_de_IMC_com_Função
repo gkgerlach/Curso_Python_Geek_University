@@ -33,7 +33,7 @@ grupo.sort(key=itemgetter('Nome'))
 print('\n')
 
 for i, pessoa in enumerate(grupo, start=1):
-    print(f"Pessoa {i} - Nome: {pessoa['Nome']} | Peso: {pessoa['Peso']} | Altura: {pessoa['Altura']} | IMC:{pessoa['IMC']} | Categoria: {pessoa['Categoria']}")
+    print(f"Pessoa {i} - Nome: {pessoa['Nome']} | Peso: {pessoa['Peso']} | Altura: {pessoa['Altura']} | IMC: {pessoa['IMC']} | Categoria: {pessoa['Categoria']}")
 
 print("\n")
 print(100 * "-")

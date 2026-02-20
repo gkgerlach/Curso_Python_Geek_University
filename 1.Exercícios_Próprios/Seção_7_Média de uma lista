@@ -1,0 +1,30 @@
+"""
+3 Crie uma função que receba como parâmetro uma lista com valores numéricos e 
+retorne a média desses valores.
+
+"""
+
+def media_lista(lista: list) -> float:
+    return round((sum(lista)/len(lista)),2)
+
+
+if __name__ == '__main__':
+    lista = []
+
+    print('Entrada de valores')
+    print("Digite o valor para incluir na lista ou digite 'sair' para finalizar")
+    while True:
+        
+        entrada = input('> ')
+        if entrada.lower() == 'sair':
+            break
+        valor_numerico = float(entrada)
+        lista.append(valor_numerico)
+
+    if len(lista)>0:
+        media_final=media_lista(lista)
+        print(f'\nA lista gerada foi: {lista}')
+        print(f'A média gerada: {media_final}')
+    else:
+        print('Nenhum valor inserido')
+
