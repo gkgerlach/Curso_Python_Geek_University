@@ -1,0 +1,57 @@
+"""
+Listas Alinhadas (Nested Lists)
+
+- Unidimensionais (Arrays/Vetores);
+- Multidimensionais (Matrizes);
+
+
+#Exemplos
+listas = [[1,2,3], [4,5,6], [7,8,9]] #Matriz 3x3
+
+print(listas)
+print(type(listas))
+
+#Como fazemos para acessar os dados?
+print(listas[0]) #índice 0
+print(listas[1]) #índice 1
+print(listas[2]) #índice 2
+
+print(listas[0][1]) #2
+print(listas[2][1]) #8
+print(listas[2][-2]) #8
+
+
+#Exemplos Com Loops 1
+listas = [[1,2,3], [4,5,6], [7,8,9]] #Matriz 3x3
+
+
+#Iterando com loops em uma lista aninhadas
+##Iterando a lista dentro da lista
+for lista in listas:
+    print(lista)
+
+##Iterando os numeros dentro da lista que está na lista
+for lista in listas:
+    for num in lista:
+        print(num)
+
+        
+#Exemplos Com Loops 2
+listas = [[1,2,3], [4,5,6], [7,8,9]] #Matriz 3x3
+
+##Usando List Comprehension
+[[print(valor) for valor in lista] for lista in listas]
+"""
+
+#Outros Exemplos
+##Gerando um tabuleiro/Matrix 3x3
+
+tabuleiro = [[numero for numero in range(1,4)] for valor in range(1,4)]
+print(tabuleiro)
+
+#Gerando jogadas para o jogo da velha
+velha = [['X' if numero %2==0 else 'O' for numero in range(1,4)] for valor in range(1,4)]
+print(velha)
+
+#Gerando valores inicias
+print([['x' for i in range(1,4)] for j in range(1,4)])
