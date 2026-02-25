@@ -1,0 +1,42 @@
+"""
+-> Any e All
+
+#Exemplo all()
+print(all([0, 1,2,3,4])) #Todos os números são verdadeiros? False
+print(all([1,2,3,4])) #Todos os números são verdadeiros? True
+print(all([])) #Todos os números são verdadeiros? True
+print(all((1,2,3,4))) #Todos os números são verdadeiros? True
+print(all({1,2,3,4})) #Todos os números são verdadeiros? True
+print(all('Geek')) #Todos os números são verdadeiros? True
+
+nomes = ['Carlos', 'Camila', 'Carla', 'Cassiano', 'Cristiana']
+print(all([nome[0]=='C' for nome in nomes]))
+
+
+print(all(letra in 'aeiou' for letra in 'eiof'))
+print(all(letra in 'eiof' for letra in 'aeiou'))
+
+print(all(letra for letra in 'eiof' if letra in 'aeiou'))
+
+print(all(num for num in [4,2,19,6,8] if num %2 ==1)) #Lista vazia gerando o boolean True
+
+
+#Exemplo any()
+
+
+"""
+nomes = ['Carlos', 'Camila', 'Carla', 'Cassiano', 'Cristiana', 'Vanessa']
+
+print(all(nome[0]=='C' for nome in nomes)) #False
+print(any(nome[0]=='C' for nome in nomes)) #True
+
+
+print(all([num for num in [4,2,10,6,8,9] if num %2 ==0])) #True
+print(all([num %2 ==0 for num in [4,2,10,6,8,9]])) #False
+
+
+#O jeito certo de montar
+numeros = [4, 2, 10, 6, 8, 9]
+
+# Aqui ele testa cada número e gera [True, True, True, True, True, False]
+print(all(num % 2 == 0 for num in numeros))

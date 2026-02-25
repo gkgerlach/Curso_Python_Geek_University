@@ -1,0 +1,77 @@
+"""
+Utilizando Lambdas
+-> Conhecidas por expressões lambdas ou, simplesmentes, 
+Lambdas são funções sem nomes ou anônimas
+
+
+Função em Python
+def funcao(x):
+    return 3*x+1
+
+print(funcao(4))
+
+Expressão Lambda
+lambda x: 3*x+1
+
+#Como utilizar a expressão Lambda
+calc = lambda x: 3*x+1
+
+print(calc(4))
+
+#Podemos ter expressões lambdas com múltiplas entradas
+nome_completo = lambda nome, sobrenome: nome.strip().title() + ' '+sobrenome.strip().title()
+
+print(nome_completo('gustavo', 'KOVACS GERLACH '))
+print(nome_completo('  FELICITY  ', 'jones   '))
+
+#Exemplos
+#1
+amar = lambda: 'Como não amar Python'
+uma = lambda x: 3*x+1
+duas = lambda x,y: (x*y)**0.5
+tres = lambda x,y,z: 3/(1/x+1/y +1/z)
+#n = lambda x1, x2, ...., xn: <expressão>
+
+print(amar())
+print(uma(6))
+print(duas(5,7))
+print(tres(3,6,9))
+
+#2
+autores = ['Isaac Asimov', 'Ray Bradbury', 'Machado de Assis', 
+           'Lima Duarte', 'Frank Hebert', 'Clarice Lispector', 'Carlos Drummond de Andrade', 
+           'Jorge Amado', 'Franz Kafka', 'J. M. Smith', 'Marco Aurélio Cremasco']
+
+print(autores)
+
+#Ordenar pelo sobrenome
+autores.sort(key=lambda sobrenome: sobrenome.split(' ')[-1].lower()) #Último sobrenome
+print(autores)
+
+"""
+
+
+#3
+##Função Quadrática
+#f(x) = a*x**2 + b*x + c
+
+#Definindo a Função
+def funcao_quadratica(a,b,c):
+    """Retorna f(x) = a*x**2 + b*x + c"""
+    return lambda x: a*x**2 + b*x + c
+
+#Informando os argumentos da def funcao_quadratica
+teste = funcao_quadratica(2,3,-5) 
+
+#Informando o argumento da função Lambda
+print(teste(0)) 
+print(teste(1))
+print(teste(2))
+print(teste(3))
+print('\n')
+
+#Informando os argumentos da def funcao_quadratica e o argumento da função lambda
+print(funcao_quadratica(2,3,-5)(0))
+print(funcao_quadratica(2,3,-5)(1))
+print(funcao_quadratica(2,3,-5)(2))
+print(funcao_quadratica(2,3,-5)(3))

@@ -1,0 +1,37 @@
+"""
+→ Reversed
+"""
+#Exemplos
+lista = [1,2,3,4,5]
+res = reversed(lista)
+
+print(res)
+print(type(res))
+
+#Lista
+print(list(reversed(lista)))
+
+#Tupla
+print(tuple(reversed(lista)))
+
+#Set
+print(set(reversed(lista)))
+
+#Iterando sobre o reversed
+for letra in reversed('Geek University'):
+    print(letra, end='')
+
+print('\n')
+#Podemos fazer o mesmo sem o uso do for 
+print(''.join(list(reversed('Geek University'))))
+
+#Já vimos como fazer isso mais fácil com o slice de string
+print('Geek University'[::-1])
+
+#Podemos Também usar o reversed para fazer um loop for reverso
+for n in reversed(range(0,10)):
+    print(n)
+
+#Apesar que já vimos como fazer isso utilizando o próprio range()
+for n in range(9,-1,-1):
+    print(n)

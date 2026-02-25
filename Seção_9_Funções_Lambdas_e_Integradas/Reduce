@@ -1,0 +1,24 @@
+"""
+-> Reduce
+
+
+"""
+#Funcionamento na Prática
+#Usando a função reduce() para multiplicar todos os números de uma lista 
+
+from functools import reduce
+
+dados = [2,3,4,5,7,11,13,17,19,23,29]
+
+#Para utilizar o reduce() nós precisamos de uma funçõa que receba dois parâmetros
+multi = lambda x, y: x*y
+
+res = reduce(multi, dados)
+print(res)
+
+#Utilizando um loop 
+res = 1
+for n in dados:
+    res = res * n
+
+print(res)

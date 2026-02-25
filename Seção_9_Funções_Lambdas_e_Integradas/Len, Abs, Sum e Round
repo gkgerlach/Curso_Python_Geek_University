@@ -1,0 +1,46 @@
+"""
+→ Len, Abs, Sum e Round
+
+#Len
+print(len('Geek University'))
+print(len([1,2,3,4,5]))
+print(len((1,2,3,4,5)))
+print(len({1,2,3,4,5}))
+print(len({'a':1,'b':2,'c':3,'d':4,'f':5}))
+print(len(range(0,10)))
+
+#Por debaixo dos panos, quando utilizamos a função len() o Python faz o seguinte:
+
+#Dunder
+print('Geek University'.__len__()) 
+
+
+#Abs
+#Exemplo
+print(abs(-5))
+print(abs(5))
+print(abs(3.14))
+print(abs(-3.14))
+
+#print(abs('Geek')) Não Existe
+
+#sum
+print(sum([1,2,3,4,5])) #15
+print(sum([1,2,3,4,5],5)) #20
+print(sum([1,2,3,4,5],-5)) #-10
+
+print(sum([3.14, 2,72]))
+print(sum((1,2,3,4,5)))
+print(sum({1,2,3,4,5}))
+print(sum({'a':1,'b':2,'c':3,'d':4,'f':5}.values()))
+
+#Não é possível com strings
+"""
+
+#round
+print(round(10.3))
+print(round(10.5))
+print(round(10.6))
+print(round(1.23124,2))
+print(round(1.2999,2))
+

@@ -1,0 +1,85 @@
+"""
+→ Sorted
+
+#->Listas
+#sort()
+numeros = [6,1,8,2]
+numeros.sort()
+print(numeros)
+
+#sorted()
+numeros = [6,1,8,2]
+print(numeros)
+
+print(sorted(numeros)) #Ordernar do menor para o maior
+
+print(numeros)
+
+#->Tuplas
+numeros = (6,1,8,2)
+print(numeros)
+
+print(sorted(numeros)) 
+
+print(numeros)
+
+#->Set
+numeros = {6,1,8,2}
+print(numeros)
+
+print(sorted(numeros)) 
+
+print(numeros)
+
+numeros = [6,1,8,2]
+print(numeros)
+#Adicionando parâmetros ao sorted()
+print(sorted(numeros, reverse=True)) #Ordena do maior para o menor 
+
+#Convertendo para uma tupla 
+print(tuple(sorted(numeros, reverse=True)))
+
+#Convertendo para um set 
+print(set(sorted(numeros, reverse=True)))
+
+
+#Podemos utilizar o sorted() para coisas mais complexas
+usuarios = [
+    {"username":"samuel","tweets": ["Eu adoro bolos","Eu adoro pizzas"]},
+    {"username":"carla","tweets": ["Eu amo gatos"]},
+    {"username":"jeff","tweets": []},
+    {"username":"bob123","tweets": [], "cor":"amarelo"},
+    {"username":"doggo","tweets": ["Eu gosto de cachorro","Bora dar role!"]},
+    {"username":"gal","tweets": [], "cor":"preto", "musica":"rock"}
+            ] #Lista dentro de dicionário que está dentro de lista
+
+print(usuarios)
+#print(sorted(usuarios)) #Não é possível pois não consegue iterar na lista
+print(sorted(usuarios, key=lambda usuario: usuario["username"])) #Ordenando pela ordem alfabética dos usuários
+print(sorted(usuarios, key=lambda usuario: usuario["username"], reverse=True)) #Ordenando pela ordem alfabética dos usuários de trás para frente
+
+
+#Caso queira fazer pelo ordem do "Tweet"
+usuarios_ordenados = sorted(usuarios, key=lambda usuario: usuario['tweets'])
+
+#Contando a quantidade de tweets de cada usuario
+for u in usuarios_ordenados:
+    print(f'{u['username']}: {len(u['tweets'])}')
+
+
+#Ordenando pela quantidade de tweets
+print(sorted(usuarios, key=lambda usuario: len(usuario['tweets']), 
+        reverse=True
+        ))
+"""
+
+#Lista de Músicas
+musicas = [
+    {"título":"Thunderstruck", "tocada":3},
+    {"título":"Deutschland", "tocada":12},
+    {"título":"Resist and Desorder", "tocada":4},
+    {"título":"Back in Black", "tocada":1},
+]
+
+print(sorted(musicas, key=lambda musica: musica['tocada']))
+print(sorted(musicas, key=lambda musica: musica['tocada'], reverse= True))

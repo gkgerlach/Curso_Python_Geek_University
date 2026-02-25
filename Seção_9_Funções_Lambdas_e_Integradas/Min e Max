@@ -1,0 +1,95 @@
+"""
+→ Min e Max
+
+#Exemplo Max
+lista = [1,8,4,999,34,129]
+print(max(lista))
+
+tupla = (1,8,4,999,34,129)
+print(max(tupla))
+
+setlist = {1,8,4,999,34,129}
+print(max(setlist))
+
+dicionario = {'a':1,'b':8,'c':4,'d':999,'e':34,'f':129}
+print(max(dicionario)) #maior pela chave
+print(max(dicionario.values()))
+
+#Faça um progama que receba dois valores do usuário
+val1 = int(input('Informe o primeiro valor: '))
+val2 = int(input('Informe o segundo valor: '))
+
+print(max(val1, val2))
+
+print(max('a', 'ab', 'abc')) #maior em caracteres 
+print(max('a', 'b', 'c')) #Maior na ordem alfabética
+
+#Exemplo Min
+lista = [1,8,4,999,34,129]
+print(min(lista))
+
+tupla = (1,8,4,999,34,129)
+print(min(tupla))
+
+setlist = {1,8,4,999,34,129}
+print(min(setlist))
+
+dicionario = {'a':1,'b':8,'c':4,'d':999,'e':34,'f':129}
+print(min(dicionario)) #maior pela chave
+print(min(dicionario.values()))
+
+# Outros exemplos 
+nomes = ['Arya', 'Samson', 'Tim', 'Ollivander']
+
+#Leva em consideração a ordem alfabética
+print(max(nomes))
+print(min(nomes))
+
+#Leva em consideração o comprimento do nome
+print(max(nomes, key=lambda nome: len(nome)))
+print(min(nomes, key=lambda nome: len(nome)))
+"""
+
+#Lista de Músicas
+musicas = [
+    {"título":"Thunderstruck", "tocada":3},
+    {"título":"Deutschland", "tocada":12},
+    {"título":"Resist and Desorder", "tocada":4},
+    {"título":"Back in Black", "tocada":1},
+]
+
+print(max(musicas, key=lambda musica: musica["tocada"]))
+print(min(musicas, key=lambda musica: musica['tocada']))
+
+#Desafio! Somente o título da música mais tocada e menos tocada
+print(max(musicas, key=lambda musica: musica["tocada"])['título'])
+print(min(musicas, key=lambda musica: musica['tocada'])['título'])
+
+#DESAFIO 2 -> Como encontrar a música mais tocada e menos tocada sem usar max(), min() e lambda?
+
+#Meu caminho
+"""
+for biblioteca in musicas:
+    for chave, valor in biblioteca.items():
+        print(f'{chave}: {valor}')
+"""
+
+#Resposta
+max = 0
+for musica in musicas:
+    if musica['tocada']>max:
+        max = musica['tocada']
+    
+for musica in musicas:
+    if musica['tocada'] == max:
+        print(musica['título'])
+
+
+min = 1000
+for musica in musicas:
+    if musica ['tocada']<min:
+        min= musica['tocada']
+
+for musica in musicas:
+    if musica['tocada']==min:
+        print(musica['título'])

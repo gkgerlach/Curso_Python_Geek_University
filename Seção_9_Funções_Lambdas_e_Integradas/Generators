@@ -1,0 +1,69 @@
+"""
+→ Generators
+Não chegamos a ver Tuple Comprehension → Se chamam generators
+
+nomes = ['Carlos', 'Camila', 'Carla', 'Cassiano', 'Cristiana', 'Vanessa']
+print(any([nome[0]=='C' for nome in nomes]))
+
+nomes = ['Carlos', 'Camila', 'Carla', 'Cassiano', 'Cristiana', 'Vanessa']
+
+#Usando Generators
+print(any([nome[0]=='C' for nome in nomes])) #List Comprehension
+print(any(nome[0]=='C' for nome in nomes)) #Generator
+
+#Diferenciando ambos
+#Lista Comprehension
+res = [nome[0]=='C' for nome in nomes]
+print(type(res))
+print(res)
+
+#Generator
+res = (nome[0]=='C' for nome in nomes)
+print(type(res))
+print(res)
+
+
+#Qual a utilidade de getsizeof() -> Retorna a quantidade de bytes em 
+# memória do elemento passado como parâmetro 
+from sys import getsizeof
+
+#Mostra quantos bytes a string 'Geek' está ocupando em memória.
+# Quanto maior a string, mais espaço
+print(getsizeof('Geek'))
+print(getsizeof('University'))
+print(getsizeof(9))
+print(getsizeof(91))
+print(getsizeof(98312342432))
+print(getsizeof(True))
+
+
+from sys import getsizeof
+
+#Gerando uma lista de números com List Comprehensions
+list_comp = getsizeof([x*10 for x in range(1000)])
+
+#Gerando uma lista de números com Set Comprehensions
+set_comp = getsizeof({x*10 for x in range(1000)})
+
+#Gerando uma lista de números com Dictionary Comprehensions
+dict_comp = getsizeof({x:x*10 for x in range(1000)})
+
+#Gerando uma lista de números com Generators
+gen = getsizeof(x*10 for x in range(1000))
+
+print('Para fazer a mesma tarefa gastamos em memória')
+print(40*'-')
+print('\n')
+print(f'List Comprehensions {list_comp} bytes')
+print(f'Set Comprehensions {set_comp} bytes')
+print(f'Dectionary Comprehensions {dict_comp} bytes')
+print(f'Generator {gen} bytes')
+
+"""
+
+gen = (x*10 for x in range(1000))
+print(gen)
+print(type(gen))
+
+for num in gen:
+    print(num)

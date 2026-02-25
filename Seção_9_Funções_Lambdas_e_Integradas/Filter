@@ -1,0 +1,80 @@
+"""
+-> Filter
+
+valores = 1,2,3,4,5,6
+
+#Média de valores
+media = sum(valores)/len(valores)
+print(media)
+
+
+#Biblioteca para trabalhar com dados estatísticos
+import statistics
+
+#Dados coletados de um sensor
+dados = [1.3,2.7,0.8,4.1,4.3,-0.1]
+
+#Calculando a média dos dados utilizando a função mean()
+media=statistics.mean(dados)
+
+
+#Aplicando o filter()
+res = filter(lambda x: x>=media, dados) #Usando a lambda para criar uma lógica
+#Ou res = filter(lambda valor: valor > media, dados)
+print(media)
+print(list(res))
+print(list(res)) #-> Lista vazia quando aplicada pela segunda vez
+
+#Exemplo 1
+paises = ['', 'Argentina', '', 'Brasil', 'Chile', 
+          'Colombia', '', 'Equador', '','','Venezuela']
+print(paises)
+
+res = filter(None, paises) #Dados vazios sejam eliminados
+print(list(res))
+
+
+paises = ['', 'Argentina', '', 'Brasil', 'Chile', 
+          'Colombia', '', 'Equador', '','','Venezuela']
+
+res = filter(lambda pais: len(pais)>0, paises) #Dados vazios sejam eliminados
+print(list(res))
+#Ou
+res = filter(lambda pais: pais!='', paises) #Dados vazios sejam eliminados
+print(list(res))
+
+
+#Exemplo mais complexo
+usuarios = [
+    {"username":"samuel","tweets": ["Eu adoro bolos","Eu adoro pizzas"]},
+    {"username":"carla","tweets": ["Eu amo gatos"]},
+    {"username":"jeff","tweets": []},
+    {"username":"bob123","tweets": []},
+    {"username":"doggo","tweets": ["Eu gosto de cachorro","Bora dar role!"]},
+    {"username":"gal","tweets": []}
+            ] #Lista dentro de dicionário que está dentro de lista
+
+#Forma 1
+#Tarefa: Filtrar os usuários que estão inativos no Tweeter. Ou seja tweets = 0
+#inativos = list(filter(lambda usuario: len(usuario['tweets'])==0,usuarios))
+#print(inativos)
+
+#Forma 2
+inativos = list(filter(lambda usuario: not usuario['tweets'],usuarios))
+print(inativos)
+"""
+
+#→ Como combinar filter() e map()
+nomes = ['Vanessa', 'Ana', 'Maria']
+
+#Devemos criar uma lista contendo 'Sua instrutora é' + nome, 
+# desde que o nome tenha nos de 5 caracteres
+
+lista = list(
+    map(lambda nome: f'Sua instrutora é {nome}', 
+            filter(lambda nome: len(nome) <5, nomes)
+        )
+)
+
+#Filter dentro do map
+print(lista)

@@ -1,0 +1,48 @@
+"""
+-> Map
+
+import math
+
+def area(r):
+    #Cálcula a área de um círcula de raio 'r'
+    return math.pi*(r**2)
+
+print(area(2))
+print(area(5.3))
+
+
+raios = [2,5,7.1,0.3,10,44]
+#Caso mais de um raio -> Lista de raios
+areas = []
+for r in raios:
+    areas.append(area(r))
+print(areas)
+
+#Forma 2 - com Map
+#Map é uma função que recebe dois parâmetros: 1° a função, 2° um iterável
+#Retorna um Map object -> Lista, Tupla, Dicionário
+areas = map(area,raios)
+print(areas)
+print(type(areas))
+print(list(areas))
+print(tuple(areas))
+
+#Forma 3 - Com Map e Lambda
+print(list(map(lambda r: math.pi*r**2, raios)))
+
+"""
+
+#Exemplo
+cidades = [('Berlim', 29), ('Cairo', 36), ('Buenos Aires', 19), ('Los Angeles', 26),
+           ('Tokio', 27), ('Nova York', 28), ('Londres', 22)]
+
+print(cidades)
+
+#Alguém pediu a temperaturas em outra Escala
+#f = 9/5*c +32
+
+c_para_f = lambda dado: (dado[0], (9/5)*dado[1]+32)
+
+print(list(map(c_para_f,cidades)))
+#OU
+print(list(map(lambda dado: (dado[0], (9/5)*dado[1]+32),cidades)))
