@@ -1,0 +1,33 @@
+"""
+Exercício 3) Eficiência de Conversão (Zip, Map & Filter):
+Você tem duas
+listas:
+reagente_entrada= [100, 150, 200, 120] (kg/h) e
+produto_saida = [85, 142, 170, 115] (kg/h).
+Use zip() para parear as entradas e saídas.
+Use map() com uma lambda para calcular a eficiência $\eta = (\frac{\text{saida}}{\text{entrada}}) \times 100$ para cada par.
+Use filter() para gerar uma lista apenas com as eficiências que ficaram abaixo de 90%.
+"""
+
+reagente_entrada = [100, 150, 200, 120]
+produto_saida = [85, 142, 170, 115]
+
+# Questão 1
+zip1 = zip(reagente_entrada, produto_saida)
+print(list(zip1))
+
+# Questão 2
+rendimento = map(
+    lambda entrada, saida: round(saida * 100 / entrada, 2),
+    reagente_entrada,
+    produto_saida,
+)
+print(list(rendimento))
+
+rendimento = map(
+    lambda entrada, saida: round(saida * 100 / entrada, 2),
+    reagente_entrada,
+    produto_saida,
+)
+# Questão 3
+print(list(filter(lambda x: x > 90, rendimento)))
