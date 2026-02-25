@@ -1,0 +1,18 @@
+"""
+Exercício 1) Tratamento de Sinais de Sensores (Comprehensions):
+Você recebeu uma lista de leituras de pressão de um reator em PSI: pressoes_psi = [14.5, -1.0, 15.2, 18.9, -99, 14.7, 20.1]. As leituras negativas são erros de sensor. 
+Use List Comprehension para criar uma nova lista chamada pressoes_bar que:
+1.	Ignore os valores negativos (erros).
+2.	Converta os valores válidos para Bar (Considere 1bar= 14.5PSI).
+
+"""
+
+#Pressões PSI
+pressoes_psi = [14.5, -1.0, 15.2, 18.9, -99, 14.7, 20.1]
+
+#Pressões Bar
+pressoes_bar = [round(pressoes/14.5,1) for pressoes in pressoes_psi if pressoes >0]
+
+#Print
+print(pressoes_psi)
+print(pressoes_bar)

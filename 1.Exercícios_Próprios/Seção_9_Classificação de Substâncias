@@ -1,0 +1,14 @@
+"""
+Exercício 2) Classificação de Substâncias (Lambdas & Sorted):
+Dada uma lista de dicionários representando compostos químicos: 
+compostos = [{'nome': 'Etanol', 'ebulicao': 78.3}, {'nome': 'Metano', 'ebulicao': -161.5}, {'nome': 'Água', 'ebulicao': 100.0}].
+Utilize uma expressão lambda como chave da função sorted() para ordenar essa lista do composto com o menor ponto de ebulição para o maior. Ao final, 
+use max() com a mesma lógica para imprimir apenas o nome do composto mais volátil (menor ponto de ebulição).
+
+"""
+
+compostos = [{'nome': 'Etanol', 'ebulicao': 78.3}, {'nome': 'Metano', 'ebulicao': -161.5}, {'nome': 'Água', 'ebulicao': 100.0}]
+
+print(sorted(compostos, key=lambda composto: composto['ebulicao']))
+print(max(compostos, key=lambda composto: -composto['ebulicao'])['nome']) #Utilizando max() para pesquisar o composto de menor ponto de ebuilição
+print(min(compostos, key=lambda composto: composto['ebulicao'])['nome']) #Usando o min()

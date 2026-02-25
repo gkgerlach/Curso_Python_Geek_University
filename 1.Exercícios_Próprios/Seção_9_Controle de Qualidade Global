@@ -1,0 +1,27 @@
+"""
+Exercício 4) Controle de Qualidade Global (All & Any):
+Uma bateria de testes de pH foi realizada em 5 tanques: testes_ph = [7.2, 6.8, 4.5, 7.0, 7.4]. 
+Para o processo ser considerado seguro, todos os tanques devem ter pH entre 6.5 e 7.5.
+1.	Use all() com um Generator para verificar se a produção completa está dentro dos padrões (True/False).
+2.	Use any() para verificar se existe algum tanque em estado crítico (pH abaixo de 5.0).
+
+"""
+
+testes_ph = [7.2, 6.8, 4.5, 7.0, 7.4]
+
+#Questão 1
+#print(all([teste_ph for teste_ph in testes_ph if not teste_ph>6.5 and teste_ph<7.5])) #True
+#print(all([teste_ph in testes_ph for teste_ph in testes_ph if not teste_ph>6.5 and teste_ph<7.5])) #True
+print(all(6.5 < ph < 7.5 for ph in testes_ph)) #False
+
+
+
+
+#Questão 2
+#print(any(ph for ph in testes_ph if 5.0>ph))
+print(f'Existe alguma amostra abaixo de ph 5.0? {any(teste_ph<5.0 for teste_ph in testes_ph)}')
+""""
+for ph in testes_ph: 
+    if 5.0>ph:
+        print(ph)
+    """
