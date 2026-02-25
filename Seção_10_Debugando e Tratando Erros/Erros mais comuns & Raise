@@ -1,0 +1,40 @@
+"""
+→Erros Mais Comuns em Python 
+
+→ Raise
+
+#Exemplo de Raise
+def calcular_pressao(temp_celsius):
+    if temp_celsius < -273.15:
+        # Você levanta o erro antes que o cálculo errado aconteça
+        raise ValueError("Temperatura abaixo do zero absoluto! Operação cancelada.")
+    
+    return temp_celsius + 273.15 # Exemplo simples de conversão
+
+#Exemplo
+def colore(texto, cor):
+    if type(texto) is not str:
+        raise TypeError('Precisar ser uma String')
+    if type(cor) is not str:
+        raise TypeError('Precisar ser uma String')
+    print(f'O texto {texto} será impresso na cor {cor}')
+
+colore('Geek','Azul')
+colore('Geek',2)
+colore(4,'Azul')
+
+#Exemplo
+def colore(texto, cor):
+    cores = ('verde', 'amarelo', 'azul', 'branco')
+    if type(texto) is not str:
+        raise TypeError('Precisar ser uma String')
+    if type(cor) is not str:
+        raise TypeError('Precisar ser uma String')
+    if cor not in cores:
+        raise ValueError(f'A cor precisa ser uma entre: {cores}')
+    print(f'O texto {texto} será impresso na cor {cor}')
+
+colore('Geek','Azul')
+"""
+
+

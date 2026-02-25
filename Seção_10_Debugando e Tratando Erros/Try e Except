@@ -1,0 +1,56 @@
+"""
+→ Try e Except
+
+#Exemplo
+#Alternativa ou tramento
+try:
+    geek()
+except: 
+    print('Deu algum problema')
+
+    
+Exemplo - Tratando um erro específico
+try:
+    geek()
+except NameError:
+    print('Deu erro de função inexistente')
+
+#Jeito errado para o tipo de erro
+try:
+    len(5)
+except NameError:
+    print('Deu erro de função inexistente')
+
+#Jeito certo
+try:
+    len(5)
+except TypeError:
+    print('Deu erro de função inexistente')
+
+#Exemplo de tratamento específico
+try:
+    len(5)
+except TypeError as err:
+    print(f'Deu erro de função inexistente do tipo {err}') #Comum guardar no log 
+
+#Exemplos de vários tratamentos de uma vez
+try:
+    len(5)
+except NameError as erra:
+    print(f'Deu NameError: {erra}')
+except TypeError as errb:
+    print(f'Deu NameError: {errb}')
+except:
+    print('Erro diferente do convecional')
+"""
+
+def pega_valor(dicionario,chave):
+    try:
+        return dicionario[chave]
+    except:
+        return None #Forma de tratar o erro
+
+dicio = {'nome': 'Geek'}
+print(pega_valor(dicio,'nome')) 
+print(pega_valor(dicio,'game')) #Com erro
+
