@@ -1,0 +1,28 @@
+"""
+→ Trabalhando com Módulos Built-In
+import random as rd
+
+print(rd.random())
+
+
+from random import *
+
+from random import randit as rdi
+
+from random import (
+    random,
+    randint,
+    shuffle,
+    choice
+)
+
+import math 
+
+print(math.dist([10], [2]))
+
+"""
+
+
+
+
+

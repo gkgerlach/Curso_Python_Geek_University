@@ -1,0 +1,14 @@
+"""
+→ Módulos customizados
+#Valores triplicados pois tem print() na função original
+from funcoes_com_parametro_teste import soma_impares
+
+print(soma_impares([1,2,3,4,5,6,7]))
+
+"""
+
+#Importando todo o módulo
+import funcoes_com_parametro_teste as fcp
+
+print(fcp.lista)
+print(fcp.soma_impares(fcp.lista))
