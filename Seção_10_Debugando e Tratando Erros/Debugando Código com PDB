@@ -9,7 +9,6 @@ def dividir(a, b):
         return f"Erro! {err}"
 
 print(dividir(4,7))
-"""
 
 def dividir(a, b):
     try:
@@ -18,3 +17,42 @@ def dividir(a, b):
         return f"Erro! {err}"
     
 print(dividir(4,7))
+
+import pdb
+
+def calcular_concentracao(mols, volume):
+    # O código vai rodar normalmente até encontrar esta linha:
+    pdb.set_trace() 
+    
+    concentracao = mols / volume
+    return concentracao
+
+# Dados que "vieram" de um banco de dados ou sensor
+n_mols = 2.5
+v_litros = 0.0  # Ops, isso vai dar erro de divisão por zero!
+
+print("Preparando para calcular...")
+resultado = calcular_concentracao(n_mols, v_litros)
+print(f"Resultado: {resultado} mol/L")
+
+#Outro jeito
+
+def calcular_concentracao(mols, volume):
+    # O código vai rodar normalmente até encontrar esta linha:
+    import pdb; pdb.set_trace() 
+    
+    concentracao = mols / volume
+    return concentracao
+
+# Dados que "vieram" de um banco de dados ou sensor
+n_mols = 2.5
+v_litros = 0.0  # Ops, isso vai dar erro de divisão por zero!
+
+print("Preparando para calcular...")
+resultado = calcular_concentracao(n_mols, v_litros)
+print(f"Resultado: {resultado} mol/L")
+"""
+
+
+
+
