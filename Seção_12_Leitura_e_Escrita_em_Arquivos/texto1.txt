@@ -1,0 +1,4 @@
+Escrevendo qualquer coisa para testar a função open() 
+Este curso está me ajudando a ficar bom em Python
+Estou aprendendo a ler arquivos
+Linguagem de alto nível (nível de abstração relativamente elevado)
